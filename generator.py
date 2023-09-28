@@ -89,7 +89,7 @@ class LinkExtractor(object):
         
         self.urls_:list = urls
         self.worktime_:str = worktime
-        self.proxy_server_:dict or None =  {'httabcp': 'http://' + proxy_server} if proxy_server else None
+        self.proxy_server_:dict or None =  {'http': 'http://' + proxy_server} if proxy_server else None
         self.agent_:dict =  {'User-agent' : agent if agent else 'Mozilla/5.0'}
         self.prnt_:True or None = prnt
 
