@@ -14,7 +14,7 @@
 
 ## Description
 
-WEB-Wordlist-Generator creates related wordlists after scanning your web applications.
+WEB-Wordlist-Generator creates related wordlists to take preliminary precautions against cyber attacks after scanning your web applications.
 
 ## ScreenShot
 
@@ -24,7 +24,7 @@ WEB-Wordlist-Generator creates related wordlists after scanning your web applica
 ## Done
 - [x] Scan Static Files.
 - [ ] Scan Metadata Of Public Documents (pdf,doc,xls,ppt,docx,pptx,xlsx etc.) 
-- [ ] Create a New Associated Wordlist with the Wordlist Given as a Parameter.
+- [ ] Create a New Associated Wordlist with the Wordlist Given as a Parameter
 
 ## Installation
 
