@@ -24,7 +24,7 @@ WEB-Wordlist-Generator creates related wordlists to take preliminary precautions
 ## Done
 - [x] Scan Static Files.
 - [ ] Scan Metadata Of Public Documents (pdf,doc,xls,ppt,docx,pptx,xlsx etc.) 
-- [ ] Create a New Associated Wordlist with the Wordlist Given as a Parameter
+- [ ] Create a New Associated Wordlist with the Wordlist Given as a Parameter.
 
 ## Installation
 
@@ -47,6 +47,8 @@ docker run webwordlistgenerator -d target-web.com -o
 ```
 
 ### From DockerHub
+
+You can run this application on a container after pulling from DockerHub.
 
 ```
 docker pull osmankandemir/webwordlistgenerator:v1.0
