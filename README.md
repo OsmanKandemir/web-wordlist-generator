@@ -4,7 +4,7 @@
 [![Wordlist-Generator](https://img.shields.io/badge/Wordlist-Generator-red)](https://www.github.com/OsmanKandemir/web-wordlist-generator)
 [![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/OsmanKandemir/web-wordlist-generator)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/OsmanKandemir/web-wordlist-generator/blob/main/LICENSE)
-[![Python Version](https://img.shields.io/badge/python-3.7+-green)](https://www.python.org)
+[![Python Version](https://img.shields.io/badge/python-3.10-green)](https://www.python.org)
 [![Docker](https://img.shields.io/badge/docker-build-important.svg?logo=Docker)](https://www.docker.com)
 
 
