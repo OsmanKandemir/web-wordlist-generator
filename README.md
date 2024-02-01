@@ -14,7 +14,7 @@
 
 ## Description
 
-WEB-Wordlist-Generator creates related wordlists to take preliminary precautions against cyber attacks after scanning your web applications.
+WEB-Wordlist-Generator scans your web applications and creates related wordlists to take preliminary countermeasures against cyber attacks.
 
 ## ScreenShot
 
