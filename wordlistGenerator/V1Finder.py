@@ -2,25 +2,28 @@ import re,os
 from .log import msg
 from .functions import bcolors
 
-PATH:str = os.getcwd() or "/"
+PATH:str = os.getcwd() or "/" # Set default path if current working directory is not available
 
-def CreateWordlist(name:str,worktime:str,data:list) -> None:
+# Function that creates the file for the word list
+def CreateWordlist(name: str, worktime: str, data: list) -> None:
+    if not data:
+        return  # No need to proceed if data is empty
+    
+    # Define the message format outside the loop
+    message = f"{bcolors.WARNING}Wordlist Generated. -> {bcolors.ENDC}{name}_{worktime}.txt"
+    
     try:
-        if data:
-            with open(name + "_" + worktime + ".txt","a+") as File:
-                for i in data:
-                    if i:
-                        File.write(i + "\n")
-                    else:
-                        pass
-            msg(f"{bcolors.WARNING}Wordlist Generated. -> {bcolors.ENDC}" + name + "_" + worktime + ".txt")
-            File.close()
-        else:
-            pass
-    except:
-        pass
+        with open(f"{name}_{worktime}.txt", "a+") as file:
+            for i in data:
+                file.write(i + "\n")
+        msg(message)
+    except Exception as e:
+        # Handle exceptions appropriately, don't use bare 'except'
+        print(f"An error occurred: {e}")
 
 
+
+# Function to save data to a log file
 def SaveData(data:str,name:str,worktime:str) -> None:
     try: 
         with open(worktime + "_" + name + "_data.log","a+") as File:
@@ -42,6 +45,7 @@ def SaveData(data:str,name:str,worktime:str) -> None:
     except:
         pass
 
+# Function to remove the data file
 def RemoveData(worktime:str,name:str) -> None:
     Path = PATH + "/"+ worktime + "_" + name + "_data.log"
     if os.path.isfile(Path):
@@ -49,6 +53,7 @@ def RemoveData(worktime:str,name:str) -> None:
     else:
         pass
 
+# Function to read data from the Log File
 def ReadData(worktime:str,name:str) -> dict:
     try: 
         with open(worktime + "_" + name + "_data.log","r") as File:
@@ -64,7 +69,7 @@ def ReadData(worktime:str,name:str) -> dict:
         pass
 
 
-
+# Function to extract possible sensitive information from Source Code
 def GetPossibleSensitiveInformation(source_code:str,worktime:str) -> None:
     pattern:str = (
                 r"(\b\d{6,15}\b)|(\b(?:\d{3}[-.\s]?){2}\d{4}\b)"
@@ -85,7 +90,7 @@ def GetPossibleSensitiveInformation(source_code:str,worktime:str) -> None:
     #return result + emails_username
     SaveData(result + emails_username,"GetPossibleSensitiveInformation",worktime)
 
-
+# Function to extract email addresses from Source Code
 def GetEmails(source_code:str,worktime:str) -> None:
     pattern = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b"
     emails = re.findall(pattern, source_code)
