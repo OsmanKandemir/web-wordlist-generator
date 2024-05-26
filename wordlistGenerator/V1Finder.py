@@ -17,8 +17,8 @@ def CreateWordlist(name:str,worktime:str,data:list) -> None:
             File.close()
         else:
             pass
-    except:
-        pass
+    except Exception as Error:
+        print(f"An Error Occurred: {Error}")
 
 
 def SaveData(data:str,name:str,worktime:str) -> None:
@@ -39,8 +39,8 @@ def SaveData(data:str,name:str,worktime:str) -> None:
                 else:
                     pass
         File.close()
-    except:
-        pass
+    except Exception as Error:
+        print(f"An Error Occurred: {Error}")
 
 def RemoveData(worktime:str,name:str) -> None:
     Path = PATH + "/"+ worktime + "_" + name + "_data.log"
@@ -61,7 +61,7 @@ def ReadData(worktime:str,name:str) -> dict:
             except KeyboardInterrupt:
                 pass
     except Exception as Error:
-        pass
+        print(f"An Error Occurred: {Error}")
 
 
 
